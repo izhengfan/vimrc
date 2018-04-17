@@ -57,6 +57,8 @@ Plugin 'wannesm/wmgraphviz.vim'
 
 Plugin 'plasticboy/vim-markdown'
 
+Plugin 'mzlogin/vim-markdown-toc'
+
 "Plugin 'iamcco/mathjax-support-for-mkdp'
 "Plugin 'iamcco/markdown-preview.vim'
 
