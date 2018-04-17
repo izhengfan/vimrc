@@ -10,7 +10,9 @@ set smartindent
 
 set ruler
 
+set tabstop=4
 set shiftwidth=4
+set expandtab
 
 " our <leader> will be the space key
 let mapleader=" "
