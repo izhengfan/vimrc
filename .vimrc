@@ -66,7 +66,7 @@ Plugin 'mzlogin/vim-markdown-toc'
 
 " Plugin 'flazz/vim-colorschemes'
 
-Plugin 'majutsushi/tagbar'
+" Plugin 'majutsushi/tagbar'
 
 Plugin 'Rip-Rip/clang_complete'
 
@@ -145,7 +145,8 @@ nnoremap <leader>w <C-W>
 " <leader>s for saving files
 nnoremap <leader>s :w<CR>
 
-map <F8> :TagbarToggle<CR>
+" map <F8> :TagbarToggle<CR>
+nnoremap <F8> :LeaderfBufTag<CR>
 
 " customized abbrev in command-line
 cabbrev rd redraw!
