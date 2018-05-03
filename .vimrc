@@ -18,93 +18,56 @@ set expandtab
 let mapleader=" "
 
 set nocompatible              " be iMproved, required
-filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plug 'godlygeek/tabular'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-"Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-"Plugin 'L9'
-" Git plugin not hosted on GitHub
-"Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-Plugin 'godlygeek/tabular'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-Plugin 'scrooloose/nerdtree'
+Plug 'tpope/vim-commentary'
 
-Plugin 'tpope/vim-commentary'
+Plug 'gerw/vim-latex-suite', {'for': ['tex', 'latex']}
 
-Plugin 'python-mode/python-mode'
+Plug 'wannesm/wmgraphviz.vim'
 
-Plugin 'gerw/vim-latex-suite'
+Plug 'plasticboy/vim-markdown', {'for': 'markdown' }
 
-Plugin 'wannesm/wmgraphviz.vim'
+Plug 'mzlogin/vim-markdown-toc', {'for': 'markdown' }
 
-Plugin 'plasticboy/vim-markdown'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
-Plugin 'mzlogin/vim-markdown-toc'
+Plug 'tpope/vim-surround'
 
-"Plugin 'iamcco/mathjax-support-for-mkdp'
-"Plugin 'iamcco/markdown-preview.vim'
+Plug 'skywind3000/asyncrun.vim'
 
-" Plugin 'flazz/vim-colorschemes'
+Plug 'easymotion/vim-easymotion'
 
-" Plugin 'majutsushi/tagbar'
+Plug 'Yggdroot/LeaderF'
 
-Plugin 'Rip-Rip/clang_complete'
+Plug 'kien/rainbow_parentheses.vim'
 
-Plugin 'octol/vim-cpp-enhanced-highlight'
+Plug 'vim-scripts/ShowTrailingWhitespace'
 
-Plugin 'tpope/vim-surround'
+Plug 'Valloric/YouCompleteMe'
 
-Plugin 'skywind3000/asyncrun.vim'
+Plug 'Shougo/echodoc.vim'
 
-Plugin 'easymotion/vim-easymotion'
+"Plug 'iamcco/mathjax-support-for-mkdp'
+"Plug 'iamcco/markdown-preview.vim'
+"Plug 'flazz/vim-colorschemes'
+"Plug 'majutsushi/tagbar'
+"Plug 'Rip-Rip/clang_complete'
+"Plug 'davidhalter/jedi-vim'
+"Plug 'python-mode/python-mode'
 
-Plugin 'Yggdroot/LeaderF'
+" Initialize plugin system
+call plug#end()
 
-Plugin 'kien/rainbow_parentheses.vim'
-
-Bundle 'ShowTrailingWhitespace'
-
-" Plugin 'davidhalter/jedi-vim'
-
-" Plugin 'Valloric/YouCompleteMe'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"
-"filetype plugin on
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-
-filetype plugin on
+filetype plugin indent on
 au BufReadPost *.MD set filetype=markdown
 let g:vim_markdown_no_extensions_in_markdown = 1
 
@@ -113,19 +76,18 @@ set cindent
 set cinoptions+=L0
 set cinoptions+=g0
 
-
-map <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 let g:Tex_UseMakefile = 0
 let g:Tex_CompileRule_pdf = 'latexmk -f -pdf -src-specials --synctex=1 --interaction=nonstopmode $*'
 let g:Tex_ViewRule_pdf = 'okular --unique'
 let g:Tex_DefaultTargetFormat = 'pdf'
 
-let g:pymode_python = 'python3'
-
+"let g:pymode_python = 'python3'
+let g:ycm_python_binary_path = 'python3'
 " path to directory where library can be found
-let g:clang_library_path = $HOME.'/.local/clang_llvm_5.0.1/lib'
-let g:clang_user_options = '-std=c++11'
+"let g:clang_library_path = $HOME.'/.local/clang_llvm_5.0.1/lib'
+"let g:clang_user_options = '-std=c++11'
 
 " cpp highlight enhance
 let g:cpp_class_scope_highlight = 1
@@ -145,8 +107,22 @@ nnoremap <leader>w <C-W>
 " <leader>s for saving files
 nnoremap <leader>s :w<CR>
 
-" map <F8> :TagbarToggle<CR>
+"" Leadf settings
 nnoremap <F8> :LeaderfBufTag<CR>
+nnoremap <F2> :LeaderfFunction!<CR>
+let g:Lf_ShowRelativePath = 0
+let g:Lf_HideHelp = 1
+let g:Lf_PreviewResult = {'Function':0, 'Colorscheme':1}
+
+let g:Lf_NormalMap = {
+    \ "File":   [["<ESC>", ':exec g:Lf_py "fileExplManager.quit()"<CR>']],
+    \ "Buffer": [["<ESC>", ':exec g:Lf_py "bufExplManager.quit()"<CR>']],
+    \ "Mru":    [["<ESC>", ':exec g:Lf_py "mruExplManager.quit()"<CR>']],
+    \ "Tag":    [["<ESC>", ':exec g:Lf_py "tagExplManager.quit()"<CR>']],
+    \ "Function":    [["<ESC>", ':exec g:Lf_py "functionExplManager.quit()"<CR>']],
+    \ "Colorscheme":    [["<ESC>", ':exec g:Lf_py "colorschemeExplManager.quit()"<CR>']],
+    \ }
+"" End Leaderf
 
 " customized abbrev in command-line
 cabbrev rd redraw!
@@ -174,6 +150,38 @@ nnoremap <silent> <Esc><Esc> :nohl<CR>
 " :set foldmethod=manual
 let g:vim_markdown_folding_disabled = 1
 
+" YCM
+let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_server_log_level = 'info'
+let g:ycm_min_num_identifier_candidate_chars = 2
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_complete_in_strings=1
+let g:ycm_key_invoke_completion = '<c-z>'
+set completeopt=menu,menuone
+
+noremap <c-z> <NOP>
+
+let g:ycm_semantic_triggers =  {
+            \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+            \ 'cs,lua,javascript': ['re!\w{2}'],
+            \ }
+let g:ycm_filetype_whitelist = {
+            \ "c":1,
+            \ "cpp":1,
+            \ "objc":1,
+            \ "python":1,
+            \ "js":1,
+            \ "css":1,
+            \ "html":1,
+            \ "vim":1,
+            \ "sh":1,
+            \ "zsh":1,
+            \ "zimbu":1,
+            \ }
+" highlight PMenu ctermfg=0 ctermbg=242 guifg=black guibg=darkgrey
+" highlight PMenuSel ctermfg=242 ctermbg=8 guifg=darkgrey guibg=black
+
 " enable matchit plugin
 runtime macros/matchit.vim
 
@@ -184,8 +192,8 @@ let g:input_toggle = 0
 function! Fcitx2en()
     let s:input_status = system("fcitx-remote")
     if s:input_status == 2
-	let g:input_toggle = 1
-	let l:a = system("fcitx-remote -c")
+    let g:input_toggle = 1
+    let l:a = system("fcitx-remote -c")
     endif
 endfunction
 
@@ -194,8 +202,8 @@ endfunction
 function! Fcitx2zh()
     let s:input_status = system("fcitx-remote")
     if s:input_status != 2 && g:input_toggle == 1
-	let l:a = system("fcitx-remote -o")
-	let g:input_toggle = 0
+    let l:a = system("fcitx-remote -o")
+    let g:input_toggle = 0
     endif
 endfunction
 
@@ -260,3 +268,6 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+set noshowmode
+let g:echodoc#enable_at_startup = 1
