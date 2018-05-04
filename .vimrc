@@ -50,11 +50,17 @@ Plug 'Yggdroot/LeaderF'
 
 Plug 'kien/rainbow_parentheses.vim'
 
+Plug 'jiangmiao/auto-pairs'
+
 Plug 'vim-scripts/ShowTrailingWhitespace'
 
 Plug 'Valloric/YouCompleteMe'
 
 Plug 'Shougo/echodoc.vim'
+" Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+" Plug 'idanarye/vim-vebugger'
+
+Plug 'cpiger/NeoDebug'
 
 "Plug 'iamcco/mathjax-support-for-mkdp'
 "Plug 'iamcco/markdown-preview.vim'
@@ -130,6 +136,10 @@ cabbrev tbf TableFormat
 " byebye spaces in the line end
 cabbrev bbsp let bbspr=@/<CR>:%s/\s\+$//e<cr>:let @/=bbspr<CR>:noh<CR>
 cabbrev bbspl let bbspr=@/<CR>:s/\s\+$//e<cr>:let @/=bbspr<CR>:noh<CR>
+
+au FocusGained * :redraw!
+au BufWritePost * :redraw!
+
 " colorscheme lucid
 
 " No arrow keys
@@ -269,5 +279,7 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+" echodoc
 set noshowmode
 let g:echodoc#enable_at_startup = 1
+
