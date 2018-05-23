@@ -60,7 +60,7 @@ Plug 'Shougo/echodoc.vim'
 " Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 " Plug 'idanarye/vim-vebugger'
 
-Plug 'cpiger/NeoDebug'
+" Plug 'cpiger/NeoDebug'
 
 "Plug 'iamcco/mathjax-support-for-mkdp'
 "Plug 'iamcco/markdown-preview.vim'
