@@ -84,6 +84,13 @@ set cindent
 set cinoptions+=L0
 set cinoptions+=g0
 
+" for termdebug
+nnoremap <F9> :Break<CR>
+nnoremap <leader><F9> :Clear<CR>
+nnoremap <F6> :Continue<CR>
+nnoremap <F11> :Step<CR>
+nnoremap <F12> :Over<CR>
+
 nnoremap <C-n> :NERDTreeToggle<CR>
 
 let g:Tex_UseMakefile = 0
