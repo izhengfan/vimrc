@@ -123,6 +123,8 @@ noremap <C-y> "+y
 nnoremap <leader>w <C-W>
 " <leader>s for saving files
 nnoremap <leader>s :w<CR>
+" <leader>t for open terminal
+nnoremap <leader>t :term<CR>
 
 "" Leadf settings
 nnoremap <F8> :LeaderfBufTag<CR>
