@@ -92,6 +92,7 @@ nnoremap <leader><F5> :Run<CR>
 nnoremap <F10> :Over<CR>
 nnoremap <F11> :Step<CR>
 nnoremap <leader><F11> :Finish<CR>
+let g:termdebug_wide = 163
 
 nnoremap <C-n> :NERDTreeToggle<CR>
 
