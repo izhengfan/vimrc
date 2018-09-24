@@ -99,6 +99,8 @@ let g:Tex_DefaultTargetFormat = 'pdf'
 
 "let g:pymode_python = 'python3'
 let g:ycm_python_binary_path = 'python3'
+nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
 " path to directory where library can be found
 "let g:clang_library_path = $HOME.'/.local/clang_llvm_5.0.1/lib'
 "let g:clang_user_options = '-std=c++11'
