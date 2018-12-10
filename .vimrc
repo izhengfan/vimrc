@@ -58,6 +58,8 @@ Plug 'Valloric/YouCompleteMe'
 
 Plug 'Shougo/echodoc.vim'
 
+Plug 'NLKNguyen/papercolor-theme'
+
 " Plug 'ludovicchabant/vim-gutentags'
 "Plug 'iamcco/mathjax-support-for-mkdp'
 "Plug 'iamcco/markdown-preview.vim'
