@@ -58,8 +58,9 @@ Plug 'Valloric/YouCompleteMe'
 
 Plug 'Shougo/echodoc.vim'
 
-Plug 'NLKNguyen/papercolor-theme'
+Plug 'fholgado/minibufexpl.vim'
 
+"Plug 'NLKNguyen/papercolor-theme'
 " Plug 'ludovicchabant/vim-gutentags'
 "Plug 'iamcco/mathjax-support-for-mkdp'
 "Plug 'iamcco/markdown-preview.vim'
@@ -297,3 +298,7 @@ au Syntax * RainbowParenthesesLoadBraces
 set noshowmode
 let g:echodoc#enable_at_startup = 1
 
+" do not auto open MBE
+let g:miniBufExplorerAutoStart = 0
+nnoremap <C-Right> :MBEbn<CR>
+nnoremap <C-Left> :MBEbp<CR>
