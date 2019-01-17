@@ -301,6 +301,6 @@ set noshowmode
 let g:echodoc#enable_at_startup = 1
 
 " do not auto open MBE
-let g:miniBufExplorerAutoStart = 0
-nnoremap <C-Right> :MBEbn<CR>
-nnoremap <C-Left> :MBEbp<CR>
+" let g:miniBufExplorerAutoStart = 0
+" nnoremap <C-Right> :MBEbn<CR>
+" nnoremap <C-Left> :MBEbp<CR>
