@@ -79,6 +79,7 @@ filetype plugin indent on
 au BufReadPost *.MD set filetype=markdown
 let g:vim_markdown_no_extensions_in_markdown = 1
 au FileType tex setlocal shiftwidth=2 tabstop=2
+au BufReadPost *.launch set filetype=xml "ros launch file
 
 " indentation for c/cpp
 set cindent
