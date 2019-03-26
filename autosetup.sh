@@ -1,3 +1,7 @@
+sudo add-apt-repository ppa:jonathonf/vim
+sudo apt update
+sudo apt install vim vim-gtk3
+sudo apt install curl
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cp .vimrc ~/.vimrc
