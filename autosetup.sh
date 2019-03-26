@@ -16,3 +16,4 @@ cd ..
 wget https://raw.githubusercontent.com/skywind3000/vim/master/plugin/gutentags_plus.vim
 mv gutentags_plus.vim ~/.vim/plugin
 vim +PlugInstall +qall
+sudo apt install exuberant-ctags
