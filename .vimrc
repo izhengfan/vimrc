@@ -76,9 +76,13 @@ Plug 'morhetz/gruvbox'
 call plug#end()
 
 filetype plugin indent on
+" auto cmd for file type
+au FileType tex setlocal shiftwidth=2 tabstop=2
+au FileType tex setlocal foldlevelstart=8 foldlevel=8
+au FileType tex nnoremap <F6> :! latexmk -xelatex -outdir=$HOME/.temp/tex/ % && evince ~/.temp/tex/%:r.pdf& <CR>
+au FileType python,sh nnoremap <F5> :!./%<CR>
 au BufReadPost *.MD set filetype=markdown
 let g:vim_markdown_no_extensions_in_markdown = 1
-au FileType tex setlocal shiftwidth=2 tabstop=2
 au BufReadPost *.launch set filetype=xml "ros launch file
 
 " indentation for c/cpp
@@ -87,13 +91,13 @@ set cinoptions+=L0
 set cinoptions+=g0
 
 " for termdebug
-nnoremap <F9> :Break<CR>
-nnoremap <leader><F9> :Clear<CR>
-nnoremap <F5> :Continue<CR>
-nnoremap <leader><F5> :Run<CR>
-nnoremap <F10> :Over<CR>
-nnoremap <F11> :Step<CR>
-nnoremap <leader><F11> :Finish<CR>
+au FileType c,cpp nnoremap <F9> :Break<CR>
+au FileType c,cpp nnoremap <leader><F9> :Clear<CR>
+au FileType c,cpp nnoremap <F5> :Continue<CR>
+au FileType c,cpp nnoremap <leader><F5> :Run<CR>
+au FileType c,cpp nnoremap <F10> :Over<CR>
+au FileType c,cpp nnoremap <F11> :Step<CR>
+au FileType c,cpp nnoremap <leader><F11> :Finish<CR>
 let g:termdebug_wide = 163
 
 nnoremap <C-n> :NERDTreeToggle<CR>
@@ -104,9 +108,6 @@ let g:Tex_ViewRule_pdf = 'okular --unique'
 let g:Tex_DefaultTargetFormat = 'pdf'
 
 "let g:pymode_python = 'python3'
-let g:ycm_python_binary_path = 'python3'
-nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
 " path to directory where library can be found
 "let g:clang_library_path = $HOME.'/.local/clang_llvm_5.0.1/lib'
 "let g:clang_user_options = '-std=c++11'
@@ -158,8 +159,6 @@ cabbrev bbspl let bbspr=@/<CR>:s/\s\+$//e<cr>:let @/=bbspr<CR>:noh<CR>
 au FocusGained * :redraw!
 au BufWritePost * :redraw!
 
-" colorscheme lucid
-
 " No arrow keys
 map <Left> <Nop>
 map <Right> <Nop>
@@ -210,6 +209,9 @@ let g:ycm_filetype_whitelist = {
 " highlight PMenu ctermfg=0 ctermbg=242 guifg=black guibg=darkgrey
 " highlight PMenuSel ctermfg=242 ctermbg=8 guifg=darkgrey guibg=black
 
+nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+
 " enable matchit plugin
 runtime macros/matchit.vim
 
@@ -239,40 +241,6 @@ set timeoutlen=300
 autocmd InsertLeave * call Fcitx2en()
 autocmd InsertEnter * call Fcitx2zh()
 " end handling fcitx
-
-" Ugly but useful comments/uncomments
-"  Ref: http://vim.wikia.com/wiki/Easy_(un)commenting_out_of_source_code
-" lhs comments
-nnoremap ,# :let lhs=@/<CR>:s/^/#/e<CR>:let @/=lhs<CR>:noh<CR>
-nnoremap ,/ :let lhs=@/<CR>:s/^/\/\//e<CR>:let @/=lhs<CR>:noh<CR>
-nnoremap ,> :let lhs=@/<CR>:s/^/> /e<CR>:let @/=lhs<CR>:noh<CR>
-nnoremap ," :let lhs=@/<CR>:s/^/\"/e<CR>:let @/=lhs<CR>:noh<CR>
-nnoremap ,% :let lhs=@/<CR>:s/^/%/e<CR>:let @/=lhs<CR>:noh<CR>
-nnoremap ,! :let lhs=@/<CR>:s/^/!/e<CR>:let @/=lhs<CR>:noh<CR>
-nnoremap ,; :let lhs=@/<CR>:s/^/;/e<CR>:let @/=lhs<CR>:noh<CR>
-nnoremap ,- :let lhs=@/<CR>:s/^/--/e<CR>:let @/=lhs<CR>:noh<CR>
-
-" wrapping comments
-nnoremap ,* :let lhs=@/<CR>:s/^\(.*\)$/\/\* \1 \*\//e<CR>:let @/=lhs<CR>:noh<CR>
-nnoremap ,( :let lhs=@/<CR>:s/^\(.*\)$/\(\* \1 \*\)/e<CR>:let @/=lhs<CR>:noh<CR>
-nnoremap ,< :let lhs=@/<CR>:s/^\(.*\)$/<!-- \1 -->/e<CR>:let @/=lhs<CR>:noh<CR>
-nnoremap ,d :let lhs=@/<CR>:s/^\([/(]\*\\|<!--\) \(.*\) \(\*[/)]\\|-->\)$/\2/e<CR>:let @/=lhs<CR>:noh<CR>
-
-" lhs uncomment
-nnoremap ,,# :let lhs=@/<CR>:s/^\+\s*#//e<CR>:let @/=lhs<CR>:noh<CR>==
-nnoremap ,,/ :let lhs=@/<CR>:s/^\+\s*\/\///e<CR>:let @/=lhs<CR>:noh<CR>==
-nnoremap ,,> :let lhs=@/<CR>:s/^\+\s*> //e<CR>:let @/=lhs<CR>:noh<CR>==
-nnoremap ,," :let lhs=@/<CR>:s/^\+\s*\"//e<CR>:let @/=lhs<CR>:noh<CR>==
-nnoremap ,,% :let lhs=@/<CR>:s/^\+\s*%//e<CR>:let @/=lhs<CR>:noh<CR>==
-nnoremap ,,! :let lhs=@/<CR>:s/^\+\s*!//e<CR>:let @/=lhs<CR>:noh<CR>==
-nnoremap ,,; :let lhs=@/<CR>:s/^\+\s*;//e<CR>:let @/=lhs<CR>:noh<CR>==
-nnoremap ,,- :let lhs=@/<CR>:s/^\+\s*--//e<CR>:let @/=lhs<CR>:noh<CR>==
-
-" general uncomment
-"" Warning: only work for comment symbols with spaces
-nnoremap ,,u 0daW==
-nnoremap ,,U 0daW$daw==
-" end comments/uncomments
 
 " rainbow parentheses
 let g:rbpt_colorpairs = [
@@ -316,7 +284,3 @@ if filereadable('.vimrc.local')
     source .vimrc.local
 endif
 
-" auto cmd for file type
-au FileType tex setlocal foldlevelstart=8 foldlevel=8
-au FileType tex nnoremap <F6> :! latexmk -xelatex -outdir=$HOME/.temp/tex/ % && evince ~/.temp/tex/%:r.pdf& <CR>
-au FileType python nnoremap <F5> :!./%<CR>
