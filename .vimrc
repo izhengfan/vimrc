@@ -305,3 +305,18 @@ let g:echodoc#enable_at_startup = 1
 " let g:miniBufExplorerAutoStart = 0
 " nnoremap <C-Right> :MBEbn<CR>
 " nnoremap <C-Left> :MBEbp<CR>
+
+" colorscheme
+set termguicolors
+let g:gruvbox_guisp_fallback = "bg"
+colorscheme gruvbox
+
+" local .vimrc
+if filereadable('.vimrc.local')
+    source .vimrc.local
+endif
+
+" auto cmd for file type
+au FileType tex setlocal foldlevelstart=8 foldlevel=8
+au FileType tex nnoremap <F6> :! latexmk -xelatex -outdir=$HOME/.temp/tex/ % && evince ~/.temp/tex/%:r.pdf& <CR>
+au FileType python nnoremap <F5> :!./%<CR>

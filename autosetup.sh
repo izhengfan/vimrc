@@ -17,3 +17,7 @@ wget https://raw.githubusercontent.com/skywind3000/vim/master/plugin/gutentags_p
 mv gutentags_plus.vim ~/.vim/plugin
 vim +PlugInstall +qall
 sudo apt install exuberant-ctags
+cd ~/.vim/plugged/YouCompleteMe
+./install.py --clang-completer
+cd ~/.vim/plugged/LeaderF
+./install.sh
