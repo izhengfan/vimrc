@@ -133,7 +133,7 @@ nnoremap <leader>s :w<CR>
 nnoremap <leader>t :term<CR>
 
 "" Leadf settings
-nnoremap <F8> :LeaderfBufTag<CR>
+nnoremap <F8> :LeaderfBufTag!<CR>
 nnoremap <F2> :LeaderfFunction!<CR>
 let g:Lf_ShowRelativePath = 0
 let g:Lf_HideHelp = 1
