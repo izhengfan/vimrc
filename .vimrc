@@ -150,10 +150,14 @@ let g:Lf_NormalMap = {
 
 function! Lf_rg_iw()
     let s:wordUnderCursor = expand("<cword>")
-    let s:lfrgiw_cmd = "Leaderf rg -e  " . s:wordUnderCursor
-    execute s:lfrgiw_cmd
+    execute "Leaderf rg -e " . s:wordUnderCursor
 endfunction
 cabbrev rgiw call Lf_rg_iw()
+function! Lf_file_iw()
+    let s:wordUnderCursor = expand("<cword>")
+    execute "Leaderf file --input " . s:wordUnderCursor
+endfunction
+cabbrev lfiw call Lf_file_iw()
 "" End Leaderf
 
 " customized abbrev in command-line
