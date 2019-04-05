@@ -153,6 +153,11 @@ function! Lf_rg_iw()
     execute "Leaderf rg -e " . s:wordUnderCursor
 endfunction
 cabbrev rgiw call Lf_rg_iw()
+function! Lf_rg_bf_iw()
+    let s:wordUnderCursor = expand("<cword>")
+    execute "Leaderf rg --current-buffer -e " . s:wordUnderCursor
+endfunction
+cabbrev rgbiw call Lf_rg_bf_iw()
 function! Lf_file_iw()
     let s:wordUnderCursor = expand("<cword>")
     execute "Leaderf file --input " . s:wordUnderCursor
