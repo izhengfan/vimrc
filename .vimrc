@@ -84,6 +84,7 @@ au FileType python,sh nnoremap <F5> :!./%<CR>
 au BufReadPost *.MD set filetype=markdown
 let g:vim_markdown_no_extensions_in_markdown = 1
 au BufReadPost *.launch set filetype=xml "ros launch file
+au BufReadPost *.urdf set filetype=xml "ros urdf file
 
 " indentation for c/cpp
 set cindent
