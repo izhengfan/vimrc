@@ -228,6 +228,7 @@ let g:ycm_filetype_whitelist = {
 
 nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>jg :YcmCompleter GoTo<CR>
 
 " enable matchit plugin
 runtime macros/matchit.vim
