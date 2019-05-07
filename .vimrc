@@ -60,6 +60,9 @@ Plug 'Shougo/echodoc.vim'
 
 Plug 'morhetz/gruvbox'
 
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 "Plug 'NLKNguyen/papercolor-theme'
 " Plug 'ludovicchabant/vim-gutentags'
 "Plug 'iamcco/mathjax-support-for-mkdp'
@@ -202,6 +205,8 @@ let g:ycm_server_log_level = 'info'
 let g:ycm_min_num_identifier_candidate_chars = 2
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_complete_in_strings=1
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_key_list_previous_completion = ['<Up>']
 " let g:ycm_key_invoke_completion = '<c-z>'
 " noremap <c-z> <NOP>
 set completeopt=menu,menuone
