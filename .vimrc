@@ -104,6 +104,11 @@ au FileType c,cpp nnoremap <F11> :Step<CR>
 au FileType c,cpp nnoremap <leader><F11> :Finish<CR>
 let g:termdebug_wide = 163
 
+" for asyncrun
+" open quickfix window with height=6
+let g:asyncrun_open = 6
+let g:asyncrun_bell = 0
+
 nnoremap <C-n> :NERDTreeToggle<CR>
 
 let g:Tex_UseMakefile = 0
