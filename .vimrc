@@ -305,8 +305,6 @@ let g:echodoc#enable_at_startup = 1
 
 " colorscheme
 set termguicolors
-let g:gruvbox_guisp_fallback = "bg"
-colorscheme gruvbox
 
 " local .vimrc
 if filereadable('.vimrc.local')
