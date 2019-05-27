@@ -20,8 +20,8 @@ mkdir -p ~/.vim/plugin
 cp /usr/local/share/gtags/gtags.vim ~/.vim/plugin/
 cp /usr/local/share/gtags/gtags-cscope.vim ~/.vim/plugin/
 cd ..
-wget https://raw.githubusercontent.com/skywind3000/vim/master/plugin/gutentags_plus.vim
-mv gutentags_plus.vim ~/.vim/plugin
+# wget https://raw.githubusercontent.com/skywind3000/vim/master/plugin/gutentags_plus.vim
+# mv gutentags_plus.vim ~/.vim/plugin
 
 vim +PlugInstall +qall
 
