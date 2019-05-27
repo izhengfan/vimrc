@@ -8,9 +8,9 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 { echo "source "; pwd; echo "/.vimrc"; } | sed ':a;N;s/\n//;ba' >> ~/.vimrc
 pip3 install --user pygments
 
-wget http://tamacom.com/global/global-6.6.2.tar.gz
-tar -xf global-6.6.2.tar.gz
-cd global-6.6.2/
+wget https://github.com/izhengfan/vimrc/files/3222570/global-6.6.3.tar.gz
+tar -xf global-6.6.3.tar.gz
+cd global-6.6.3/
 sudo apt install libncurses5-dev
 ./configure
 make
