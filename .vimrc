@@ -44,8 +44,6 @@ Plug 'tpope/vim-surround'
 
 Plug 'skywind3000/asyncrun.vim'
 
-Plug 'easymotion/vim-easymotion'
-
 Plug 'Yggdroot/LeaderF'
 
 Plug 'kien/rainbow_parentheses.vim'
@@ -63,6 +61,7 @@ Plug 'morhetz/gruvbox'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
+"Plug 'easymotion/vim-easymotion'
 "Plug 'NLKNguyen/papercolor-theme'
 " Plug 'ludovicchabant/vim-gutentags'
 "Plug 'iamcco/mathjax-support-for-mkdp'
@@ -138,8 +137,6 @@ noremap <C-y> "+y
 nnoremap <leader>w <C-W>
 " <leader>s for saving files
 nnoremap <leader>s :w<CR>
-" <leader>t for open terminal
-nnoremap <leader>t :term<CR>
 
 "" Leadf settings
 nnoremap <F8> :LeaderfBufTag!<CR>
