@@ -25,6 +25,9 @@ cd ..
 
 vim +PlugInstall +qall
 
+mkdir -p ~/.vim/UltiSnips
+cp UltiSnips/*.snippets ~/.vim/UltiSnips/
+
 git clone https://github.com/universal-ctags/ctags --depth=1
 cd ctags
 ./autosetup.sh
