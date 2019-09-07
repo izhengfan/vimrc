@@ -1,0 +1,13 @@
+priority -50
+
+snippet cls "class .. (class)"
+class ${1:`!p snip.rv = snip.basename or "name"`}
+{
+public:
+	$1 () = default;
+	~$1 () = default;
+
+	$1 (${2:arguments});
+
+};
+endsnippet
