@@ -9,5 +9,12 @@ public:
 
 	$1 (${2:arguments});
 
+	bool operator== (const $1& that);
+	bool operator< (const $1& that);
 };
+endsnippet
+
+snippet ptr "define smart ptr"
+using Ptr = std::shared_ptr<${1:classname`}>;
+using WPtr = std::weak_ptr<${1:classname`}>;
 endsnippet
