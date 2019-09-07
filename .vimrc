@@ -92,6 +92,10 @@ au BufReadPost *.urdf set filetype=xml "ros urdf file
 set cindent
 set cinoptions+=L0
 set cinoptions+=g0
+set cinoptions+=:0
+set cinoptions+=N-s
+set cinoptions+=E-s
+set cinoptions+=(0
 
 " for termdebug
 au FileType c,cpp nnoremap <F9> :Break<CR>
