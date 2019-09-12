@@ -174,6 +174,8 @@ function! Lf_file_iw()
     execute "Leaderf file --input " . s:wordUnderCursor
 endfunction
 cabbrev lfiw call Lf_file_iw()
+nnoremap <leader>rg :call Lf_rg_iw()<CR>
+
 "" End Leaderf
 
 " customized abbrev in command-line
