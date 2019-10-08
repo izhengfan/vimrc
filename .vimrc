@@ -95,7 +95,7 @@ set cinoptions+=g0
 set cinoptions+=:0
 set cinoptions+=N-s
 set cinoptions+=E-s
-set cinoptions+=(0
+" set cinoptions+=(0,W8
 
 " for termdebug
 au FileType c,cpp nnoremap <F9> :Break<CR>
