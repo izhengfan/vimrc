@@ -1,7 +1,7 @@
 priority -50
 
 snippet cls "class .. (class)"
-class ${1:`!p snip.rv = snip.basename or "name"`}
+class ${1:`!v substitute(substitute(vim_snippets#Filename('$1','ClassName'),'^.','\u&',''), '_\(\w\)', '\u\1', 'g')`}
 {
 public:
 	$1 () = default;
