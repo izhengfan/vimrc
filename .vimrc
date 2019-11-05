@@ -130,7 +130,8 @@ let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 "let g:cpp_experimental_template_highlight = 1
 
-
+" Ctrl-l as ESC in insert mode
+inoremap <C-l> <Esc>
 " Ctrl-p to paste from system clipboard
 noremap <C-p> "+p
 
