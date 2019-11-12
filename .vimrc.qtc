@@ -1,0 +1,2 @@
+nnoremap <Space>s :w<CR>
+nnoremap <Space><Esc> :noh<CR>
