@@ -10,9 +10,12 @@ set smartindent
 
 set ruler
 
-set tabstop=4
-set shiftwidth=4
-set expandtab
+"set tabstop=4
+"set shiftwidth=4
+"set expandtab
+set noexpandtab
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set list
 
 " our <leader> will be the space key
 let mapleader=" "
@@ -50,8 +53,6 @@ Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'jiangmiao/auto-pairs'
 
-Plug 'vim-scripts/ShowTrailingWhitespace'
-
 Plug 'Valloric/YouCompleteMe'
 
 Plug 'Shougo/echodoc.vim'
@@ -61,6 +62,7 @@ Plug 'morhetz/gruvbox'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
+"Plug 'vim-scripts/ShowTrailingWhitespace'
 "Plug 'easymotion/vim-easymotion'
 "Plug 'NLKNguyen/papercolor-theme'
 " Plug 'ludovicchabant/vim-gutentags'
@@ -79,7 +81,7 @@ call plug#end()
 
 filetype plugin indent on
 " auto cmd for file type
-au FileType tex setlocal shiftwidth=2 tabstop=2
+au FileType tex,cmake setlocal shiftwidth=2 tabstop=2 expandtab
 au FileType tex setlocal foldlevelstart=8 foldlevel=8
 au FileType tex nnoremap <F6> :! latexmk -xelatex -outdir=$HOME/.temp/tex/ % && evince ~/.temp/tex/%:r.pdf& <CR>
 au FileType python,sh nnoremap <F5> :!./%<CR>
@@ -93,7 +95,7 @@ set cindent
 set cinoptions+=L0
 set cinoptions+=g0
 set cinoptions+=:0
-set cinoptions+=N-s
+" set cinoptions+=N-s
 set cinoptions+=E-s
 " set cinoptions+=(0,W8
 
