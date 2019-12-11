@@ -14,7 +14,7 @@ set ruler
 "set shiftwidth=4
 "set expandtab
 set noexpandtab
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set listchars=tab:>-,trail:~,extends:>,precedes:<
 set list
 
 " our <leader> will be the space key
