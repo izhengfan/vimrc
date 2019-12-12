@@ -57,6 +57,8 @@ Plug 'Valloric/YouCompleteMe'
 
 Plug 'Shougo/echodoc.vim'
 
+Plug  'editorconfig/editorconfig-vim'
+
 Plug 'morhetz/gruvbox'
 
 Plug 'SirVer/ultisnips'
