@@ -165,22 +165,33 @@ let g:Lf_NormalMap = {
     \ "Colorscheme":    [["<ESC>", ':exec g:Lf_py "colorschemeExplManager.quit()"<CR>']],
     \ }
 
+" search in all project files for word under cursor
 function! Lf_rg_iw()
     let s:wordUnderCursor = expand("<cword>")
     execute "Leaderf rg -e " . s:wordUnderCursor
 endfunction
 cabbrev rgiw call Lf_rg_iw()
+nnoremap <leader>rg :call Lf_rg_iw()<CR>
+
+" search in current buffer for word under cursor
 function! Lf_rg_bf_iw()
     let s:wordUnderCursor = expand("<cword>")
     execute "Leaderf rg --current-buffer -e " . s:wordUnderCursor
 endfunction
+
+" search file names for word under cursor
 cabbrev rgbiw call Lf_rg_bf_iw()
 function! Lf_file_iw()
     let s:wordUnderCursor = expand("<cword>")
     execute "Leaderf file --input " . s:wordUnderCursor
 endfunction
 cabbrev lfiw call Lf_file_iw()
-nnoremap <leader>rg :call Lf_rg_iw()<CR>
+
+" search file names for word identitcal to current file, useful for C++ header/source switch
+function! Lf_file_cf()
+    execute "Leaderf file --nameOnly --input " . expand("%:t:r")
+endfunction
+nnoremap <leader>h :call Lf_file_cf()<CR>
 
 "" End Leaderf
 
@@ -299,7 +310,7 @@ nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
 " Find symbol of current document
 nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <space>S  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
 nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
