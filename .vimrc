@@ -53,7 +53,8 @@ Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'jiangmiao/auto-pairs'
 
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'Shougo/echodoc.vim'
 
@@ -220,6 +221,7 @@ let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_complete_in_strings=1
 let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']
+let g:ycm_clangd_binary_path = exepath("clangd")
 " let g:ycm_key_invoke_completion = '<c-z>'
 " noremap <c-z> <NOP>
 set completeopt=menu,menuone
