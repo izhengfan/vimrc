@@ -173,17 +173,10 @@ endfunction
 cabbrev rgiw call Lf_rg_iw()
 nnoremap <leader>rg :call Lf_rg_iw()<CR>
 
-" search in current buffer for word under cursor
-function! Lf_rg_bf_iw()
-    let s:wordUnderCursor = expand("<cword>")
-    execute "Leaderf rg --current-buffer -e " . s:wordUnderCursor
-endfunction
-
 " search file names for word under cursor
-cabbrev rgbiw call Lf_rg_bf_iw()
 function! Lf_file_iw()
     let s:wordUnderCursor = expand("<cword>")
-    execute "Leaderf file --input " . s:wordUnderCursor
+    execute "Leaderf file --nameOnly --input " . s:wordUnderCursor
 endfunction
 cabbrev lfiw call Lf_file_iw()
 
@@ -191,6 +184,7 @@ cabbrev lfiw call Lf_file_iw()
 function! Lf_file_cf()
     execute "Leaderf file --nameOnly --input " . expand("%:t:r")
 endfunction
+cabbrev lfcf call Lf_file_cf()
 nnoremap <leader>h :call Lf_file_cf()<CR>
 
 "" End Leaderf
