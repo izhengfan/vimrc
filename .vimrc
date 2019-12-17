@@ -56,6 +56,8 @@ Plug 'jiangmiao/auto-pairs'
 " Plug 'Valloric/YouCompleteMe'
 Plug 'https://gitee.com/izhengfan/coc.nvim', {'branch': 'release'}
 
+Plug 'https://gitee.com/izhengfan/ale'
+
 Plug 'Shougo/echodoc.vim'
 
 Plug 'editorconfig/editorconfig-vim'
@@ -312,6 +314,12 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+" ALE settings
+let g:ale_linters = {  'cpp': ['cppcheck'] }
+let g:ale_lint_on_insert_leave = 0
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+" ALE settings end
 
 " enable matchit plugin
 runtime macros/matchit.vim
