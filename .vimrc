@@ -182,7 +182,7 @@ cabbrev lfiw call Lf_file_iw()
 
 " search file names for word identitcal to current file, useful for C++ header/source switch
 function! Lf_file_cf()
-    execute "Leaderf file --nameOnly --input " . expand("%:t:r")
+    execute "Leaderf! file --nameOnly --input " . expand("%:t:r")
 endfunction
 cabbrev lfcf call Lf_file_cf()
 nnoremap <leader>h :call Lf_file_cf()<CR>
