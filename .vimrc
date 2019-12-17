@@ -29,7 +29,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'godlygeek/tabular'
 
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'https://gitee.com/izhengfan/nerdtree', { 'on':  'NERDTreeToggle' }
 
 Plug 'tpope/vim-commentary'
 
@@ -47,18 +47,18 @@ Plug 'tpope/vim-surround'
 
 Plug 'skywind3000/asyncrun.vim'
 
-Plug 'Yggdroot/LeaderF'
+Plug 'https://gitee.com/izhengfan/LeaderF'
 
 Plug 'kien/rainbow_parentheses.vim'
 
 Plug 'jiangmiao/auto-pairs'
 
 " Plug 'Valloric/YouCompleteMe'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'https://gitee.com/izhengfan/coc.nvim', {'branch': 'release'}
 
 Plug 'Shougo/echodoc.vim'
 
-Plug  'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 
 Plug 'morhetz/gruvbox'
 
