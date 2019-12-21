@@ -33,7 +33,7 @@ Plug 'https://gitee.com/izhengfan/nerdtree', { 'on':  'NERDTreeToggle' }
 
 Plug 'tpope/vim-commentary'
 
-Plug 'gerw/vim-latex-suite', {'for': ['tex', 'latex']}
+Plug 'https://gitee.com/izhengfan/vimtex', {'for': ['tex', 'latex']}
 
 Plug 'wannesm/wmgraphviz.vim'
 
@@ -94,12 +94,6 @@ let g:termdebug_wide = 163
 " open quickfix window with height=6
 let g:asyncrun_open = 6
 let g:asyncrun_bell = 0
-
-" for vim-latex-suite
-let g:Tex_UseMakefile = 0
-let g:Tex_CompileRule_pdf = 'latexmk -f -pdf -src-specials --synctex=1 --interaction=nonstopmode $*'
-let g:Tex_ViewRule_pdf = 'okular --unique'
-let g:Tex_DefaultTargetFormat = 'pdf'
 
 " cpp highlight enhance
 let g:cpp_class_scope_highlight = 1
