@@ -57,7 +57,7 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'https://gitee.com/izhengfan/coc.nvim', {'branch': 'release'}
 
-Plug 'https://gitee.com/izhengfan/ale'
+Plug 'https://gitee.com/izhengfan/ale', {'for': ['c', 'cpp'] }
 
 Plug 'editorconfig/editorconfig-vim'
 
