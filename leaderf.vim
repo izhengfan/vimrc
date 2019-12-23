@@ -42,5 +42,7 @@ function! Lf_file_cf()
 endfunction
 cabbrev lfcf call Lf_file_cf()
 
+cabbrev rg Leaderf rg
+
 "" End Leaderf
 
