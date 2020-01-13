@@ -1,2 +1,14 @@
 nnoremap <Space>s :w<CR>
 nnoremap <Space><Esc> :noh<CR>
+set tabstop=4
+set shiftwidth=4
+"set expandtab
+set noexpandtab
+" indentation for c/cpp
+set cindent
+set cinoptions+=L0
+set cinoptions+=g0
+set cinoptions+=:0
+" set cinoptions+=N-s
+set cinoptions+=E-s
+set cinoptions+=(0,W8

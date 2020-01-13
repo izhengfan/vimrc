@@ -29,3 +29,4 @@ Personal vim config.
 
 `"+y` and `"+p` to copy and paste from/to the system clipboard
 
+`:args ./src/*.cc | argdo execute "normal gg=G" | update` : auto-indent all `*.cc` files in `./src/` and save
