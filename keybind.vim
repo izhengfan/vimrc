@@ -26,8 +26,8 @@ nnoremap <silent> <leader><Esc> :nohl<CR>
 " for leaderf
 nnoremap <F8> :LeaderfBufTag!<CR>
 nnoremap <F3> :LeaderfFunction!<CR>
+nnoremap <F4> :call Lf_file_cf()<CR>
 nnoremap <leader>rg :call Lf_rg_iw()<CR>
-nnoremap <leader>h :call Lf_file_cf()<CR>
 
 " nerdtree
 nnoremap <C-n> :NERDTreeToggle<CR>
