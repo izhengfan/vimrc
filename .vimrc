@@ -87,7 +87,8 @@ set cinoptions+=g0
 set cinoptions+=:0
 " set cinoptions+=N-s
 set cinoptions+=E-s
-set cinoptions+=(0,W8
+set cinoptions+=(4
+" set cinoptions+=(0,W8
 
 " for termdebug
 let g:termdebug_wide = 163
