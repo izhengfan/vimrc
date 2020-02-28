@@ -69,7 +69,7 @@ call plug#end()
 
 filetype plugin indent on
 " auto cmd for file type
-au FileType tex,cmake setlocal shiftwidth=2 tabstop=2 expandtab
+au FileType tex,cmake,xml setlocal shiftwidth=2 tabstop=2 expandtab
 au FileType tex setlocal foldlevelstart=8 foldlevel=8
 au FileType tex nnoremap <F6> :! latexmk -xelatex -outdir=$HOME/.temp/tex/ % && evince ~/.temp/tex/%:r.pdf& <CR>
 au FileType python,sh nnoremap <F5> :!./%<CR>
