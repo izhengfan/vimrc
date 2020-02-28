@@ -13,6 +13,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'python-mode/python-mode'
 Plug 'fholgado/minibufexpl.vim'
 Plug 'gerw/vim-latex-suite', {'for': ['tex', 'latex']}
+Plug 'https://gitee.com/izhengfan/ale', {'for': ['c', 'cpp'] }
 
 "
 " echodoc
