@@ -30,3 +30,23 @@ Personal vim config.
 `"+y` and `"+p` to copy and paste from/to the system clipboard
 
 `:args ./src/*.cc | argdo execute "normal gg=G" | update` : auto-indent all `*.cc` files in `./src/` and save
+
+### To build vim from source
+
+```
+sudo apt-get update
+sudo apt-get install liblua5.2-dev
+./configure --with-features=huge --enable-multibyte \
+--enable-pythoninterp=dynamic --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
+--enable-python3interp=dynamic --with-python3-config-dir=/usr/lib/python3.6/config-3.6m-x86_64-linux-gnu/ \
+--enable-gui=auto \
+--enable-gtk2-check \
+--enable-fontset \
+--enable-largefile \
+--disable-netbeans \
+--enable-fail-if-missing \
+--enable-luainterp \
+--prefix=/usr/local
+make
+sudo make install
+```
