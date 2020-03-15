@@ -17,6 +17,10 @@ set noexpandtab
 set listchars=tab:>-,trail:~,extends:>,precedes:<
 set list
 
+set nowrap
+
+set mouse=a
+
 set colorcolumn=81
 
 " our <leader> will be the space key
