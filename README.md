@@ -15,6 +15,9 @@ Personal vim config.
 
 `:%s/xxx/yyy/g` to search and replace all xxx to yyy
 
+`:g/<pattern>/d` to delete lines with pattern
+
+
 `:sp` to split into two windows; `:vsp` to split in vertical
 
 `.` to repeat last change
