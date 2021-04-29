@@ -63,7 +63,7 @@ nmap ]t <Plug>(coc-git-nextchunk)
 nmap gs <Plug>(coc-git-chunkinfo)
 " show commit contains current position
 nmap gm <Plug>(coc-git-commit)
-nnoremap ga  :<C-u>CocCommand git.chunkStage<CR>
+nnoremap ga  :<C-u>CocCommand git.chunkStage
 " create text object for git chunks
 " omap ig <Plug>(coc-git-chunk-inner)
 " xmap ig <Plug>(coc-git-chunk-inner)
