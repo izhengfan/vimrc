@@ -29,8 +29,8 @@ nnoremap <F3> :LeaderfFunction!<CR>
 nnoremap <F4> :call Lf_file_cf()<CR>
 nnoremap <leader>rg :call Lf_rg_iw()<CR>
 
-" nerdtree
-nnoremap <C-n> :NERDTreeToggle<CR>
+" coc-explorer
+nnoremap <C-n> :CocCommand explorer<CR>
 
 " for termdebug
 au FileType c,cpp nnoremap <F9> :Break<CR>

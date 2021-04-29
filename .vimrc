@@ -35,8 +35,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'godlygeek/tabular'
 
-Plug 'https://gitee.com/izhengfan/nerdtree', { 'on':  'NERDTreeToggle' }
-
 Plug 'tpope/vim-commentary'
 
 Plug 'https://gitee.com/izhengfan/vimtex', {'for': ['tex', 'latex']}
@@ -112,12 +110,6 @@ au BufWritePost * :redraw!
 " manual folding
 " :set foldmethod=manual
 let g:vim_markdown_folding_disabled = 1
-
-" ALE settings
-let g:ale_linters = {  'cpp': ['cppcheck'] }
-let g:ale_lint_on_insert_leave = 0
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
 
 " enable matchit plugin
 runtime macros/matchit.vim

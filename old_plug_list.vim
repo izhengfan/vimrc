@@ -1,4 +1,5 @@
 Plug 'Valloric/YouCompleteMe'
+Plug 'https://gitee.com/izhengfan/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Shougo/echodoc.vim'
 Plug 'vim-scripts/ShowTrailingWhitespace'
 Plug 'easymotion/vim-easymotion'
@@ -30,3 +31,10 @@ let g:Tex_UseMakefile = 0
 let g:Tex_CompileRule_pdf = 'latexmk -f -pdf -src-specials --synctex=1 --interaction=nonstopmode $*'
 let g:Tex_ViewRule_pdf = 'okular --unique'
 let g:Tex_DefaultTargetFormat = 'pdf'
+"
+" ALE settings
+let g:ale_linters = {  'cpp': ['cppcheck'] }
+let g:ale_lint_on_insert_leave = 0
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+
