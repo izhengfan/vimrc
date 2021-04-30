@@ -9,6 +9,7 @@ pip2 install --user neovim
 
 mkdir -p ~/.config/nvim
 cp init.vim ~/.config/nvim/init.vim
+cp ginit.vim ~/.config/nvim/ginit.vim
 
 wget http://tamacom.com/global/global-6.6.2.tar.gz
 tar -xf global-6.6.2.tar.gz
