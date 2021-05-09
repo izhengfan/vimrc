@@ -53,8 +53,6 @@ Plug 'skywind3000/asyncrun.vim'
 
 Plug 'https://gitee.com/izhengfan/LeaderF'
 
-Plug 'kien/rainbow_parentheses.vim'
-
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'https://gitee.com/izhengfan/coc.nvim', {'branch': 'release'}
@@ -113,29 +111,6 @@ let g:vim_markdown_folding_disabled = 1
 
 " enable matchit plugin
 runtime macros/matchit.vim
-
-" rainbow parentheses
-let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
 
 let s:current_vimrc_path = expand("<sfile>:p:h")
 " exe 'source '. fnameescape( s:current_vimrc_path . '/ycm.vim' )
